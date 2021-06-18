@@ -1,0 +1,13 @@
+<% @post.each do |post| %>
+  <div class="card my-2">
+    <div class="card-body">
+      <div class="d-flex justify-content-between flex-row">
+        <h3 class="text-danger"><%= post.title %></h3>
+        <% if user_signed_in? %>
+          <p><strong class="text-danger">Author:</strong> <%= post.user.email %></p>
+        <% end %>
+      </div>
+      <p><%= post.body %></p>
+    </div>
+  </div>
+<% end %>

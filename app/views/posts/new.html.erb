@@ -1,0 +1,10 @@
+<h1>Create Post</h1>
+
+<%= form_with class: 'd-flex flex-column w-100',model: @post do |post| %>
+  <%= post.label :title, class: 'form-label'%>
+  <%= post.text_field :title, class: 'form-control' %>
+  <%= post.label :body, class: 'form-label' %>
+  <%= post.text_area :body, class: 'form-control' %>
+  <br>
+  <%= post.submit 'Save Post', class: 'btn btn-danger'%>
+<% end %>
