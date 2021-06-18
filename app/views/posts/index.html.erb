@@ -2,9 +2,9 @@
   <div class="card my-2">
     <div class="card-body">
       <div class="d-flex justify-content-between flex-row">
-        <h3><%= post.title %></h3>
+        <h3 class="text-danger"><%= post.title %></h3>
         <% if user_signed_in? %>
-          <p>Author: <%= current_user.email %></p>
+          <p><strong class="text-danger">Author:</strong> <%= current_user.email %></p>
         <% end %>
       </div>
       <p><%= post.body %></p>

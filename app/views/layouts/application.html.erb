@@ -10,10 +10,10 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body >
-  <nav class="navbar navbar-light navbar-expand-lg bg-dark">
+  <body class="container">
+  <nav class="navbar navbar-light navbar-expand-lg bg-dark rounded-bottom">
     <div class="container-fluid">
-      <%= link_to "Members Only", user_session, class: 'navbar-brand fs-2 text-danger' %>
+      <%= link_to "Members Only", root_path, class: 'navbar-brand fs-2 text-danger' %>
       <% if user_signed_in? %>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
@@ -41,7 +41,18 @@
         </div>
     </div>
   </nav>
-  <div class="container">
+  <div class="container mt-3">
+    <% if !notice.nil? %>
+    <div class="alert alert-danger" role="alert">
+      <%= notice %>
+    </div>
+    <% end %>
+
+    <% if !alert.nil? %>
+    <div class="alert alert-danger" role="alert">
+      <%= alert %>
+    </div>
+    <% end %>
     <%= yield %>
   </div>
   </body>
