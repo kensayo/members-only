@@ -4,7 +4,7 @@
       <div class="d-flex justify-content-between flex-row">
         <h3 class="text-danger"><%= post.title %></h3>
         <% if user_signed_in? %>
-          <p><strong class="text-danger">Author:</strong> <%= current_user.email %></p>
+          <p><strong class="text-danger">Author:</strong> <%= post.user.email %></p>
         <% end %>
       </div>
       <p><%= post.body %></p>

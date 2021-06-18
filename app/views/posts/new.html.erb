@@ -1,4 +1,4 @@
-<h1>New</h1>
+<h1>Create Post</h1>
 
 <%= form_with class: 'd-flex flex-column w-100',model: @post do |post| %>
   <%= post.label :title, class: 'form-label'%>
@@ -7,5 +7,5 @@
   <%= post.text_area :body, class: 'form-control' %>
   <%= post.hidden_field :user_id, value: @user.id %>
   <br>
-  <%= post.submit 'Save Post', class: 'btn btn-primary'%>
+  <%= post.submit 'Save Post', class: 'btn btn-danger'%>
 <% end %>
